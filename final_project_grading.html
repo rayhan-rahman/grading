@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro|Ubuntu" rel="stylesheet">
+	<style>
+		table {
+    		border-spacing: 2px;
+    		width: 1300px;
+    		font-family: 'Open Sans', sans-serif;
+		}
+
+		th {
+		    text-align: left;
+		    color: white;
+		    background-color: lightblue;
+		    font-family: 'Ubuntu', sans-serif;
+		}
+
+		th, td {
+		    padding: 15px;
+		}
+
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+
+		td.category {
+			background-color: limegreen;
+			color: white;
+		}
+
+		th.p_back {
+			background-color: purple;
+		}
+
+		.comment textarea{
+			/*
+			background-color: grey;
+			color: white;
+			*/
+			font-family: 'Source Sans Pro', sans-serif;
+			min-width: 200px;
+			resize: none;
+			font-size: 1em;
+		}
+
+		/*
+		input {
+			display: block;
+		  -webkit-appearance: none;
+		  -moz-appearance: none;
+		  appearance: none;
+
+		  border-radius: 50%;
+		  width: 16px;
+		  height: 16px;
+
+		  border: 2px solid #999;
+		  transition: 0.2s all linear;
+		  outline: none;
+		  margin-right: 5px;
+
+		  position: relative;
+		  top: 4px;
+		}
+
+		input:checked {
+		  border: 6px solid black;
+		}
+
+		*/
+	
+		input{
+			font-size: 1em;
+			width: 60px;
+		}
+
+		.disable_color {
+			background-color: black;
+		}
+
+		#total_mark {
+			font-weight: 900;
+			color: red;
+		}
+
+		.main_button {
+			text-align: center;
+			background-color: green;
+			color: white;
+			font-size: 1.5em;
+			border-radius: 4px;
+			padding: 15px 32px;
+		}
+
+		.main_button:hover {
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+
+	</style>
+</head>
+
+<body>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Minimum Requirements</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+	<tr>
+		<td>4 hyperlinked pages</td>
+		<td><input type="checkbox" name="minimum_requirement" id="n_pages" checked><br>Missing pages:<br>
+			<label for="zero">0:</label><input id="zero" type="radio" name="missing_pages" value="0" checked><br>
+			<label for="one">1:</label><input id="one" type="radio" name="missing_pages" value="1"><br>
+			<label for="two">2:</label><input id="two" type="radio" name="missing_pages" value="2"><br>
+			<label for="three">3:</label><input id="three" type="radio" name="missing_pages" value="3">
+		</td>
+		<td id="n_pages_grade">0</td>
+		<td><input id="page_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="page_comments"></textarea></td>
+	</tr>
+	<tr>
+		<td>A facebook like button in at least one page</td>
+		<td><input type="checkbox" name="minimum_requirement" id="like_button" checked></td>
+		<td id="like_button_grade">0</td>
+		<td><input id="button_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="button_comments"></textarea></td>
+	</tr>
+	<tr>
+		<td>An embedded Google map in at least one page</td>
+		<td><input type="checkbox" name="minimum_requirement" id="map" checked></td>
+		<td id="map_grade">0</td>
+		<td><input id="map_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="map_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>A (text or image) hyperlink to Google map in at least one page</td>
+		<td><input type="checkbox" name="minimum_requirement" id="hyper_map" checked></td>
+		<td id="hyper_map_grade">0</td>
+		<td><input id="hyper_map_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="hyper_map_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td> Some JavaScript for a slideshow</td>
+		<td><input type="checkbox" name="minimum_requirement" id="code" checked></td>
+		<td id="code_grade">0</td>
+		<td><input id="code_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="code_comments"></textarea></td>
+	</tr>
+	<tr>
+		<td>An embedded Youtube video in at least one page</td>
+		<td><input type="checkbox" name="minimum_requirement" id="emb" checked></td>
+		<td id="emb_grade">0</td>
+		<td><input id="emb_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="emb_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>A piece of auto-play, loop MP3 music</td>
+		<td><input type="checkbox" name="minimum_requirement" id="auto_music" checked></td>
+		<td id="auto_music_grade">0</td>
+		<td><input id="auto_music_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="auto_music_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>An embedded GIF-like (auto-play, loop, 5 seconds long) video</td>
+		<td><input type="checkbox" name="minimum_requirement" id="auto_video" checked></td>
+		<td id="auto_video_grade">0</td>
+		<td><input id="auto_video_partial_mark" type="number" value="0"></td>
+		<td class="comment"><textarea name="" rows="2" cols="40" id="auto_video_comments"></textarea></td>
+	</tr>
+	</table>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+	<table>
+		<tr>
+			<th class="p_back">Category</th>
+			<th>Excellent</th>
+			<th>Good</th>
+			<th>Fair</th>
+			<th>Poor</th>
+			<th class="p_back">Subtotal</th>
+			<th class="p_back">Partial Grade/Adjustment</th>
+			<th class="p_back">Comments</th>
+		</tr>
+		<tr id="structure_category">
+			<td class="category">Structure (layout, navigation, internal and external links) (30%)</td>
+			<td>All links works. Layout is perfect. No navigational issue. <input type="radio" id="excellent_structure" name="structure_radio" value="30" checked></td>
+			<td>Some alignment issues. All navigation links work. Max. 2 broken links.<input type="radio" id="good_structure" name="structure_radio" value="25"></td>
+			<td>Do not understand how to use urls. The published webpages don't match local version. <input type="radio" id="fair_structure" name="structure_radio" value="20"></td>
+			<td>Do not understand html tags, hyperlinks, multipage website design. <input type="radio" id="poor_structure" name="structure_radio" value="15"></td>
+			<td id="structure_mark"></td>
+			<td><input id="structure_partial_mark" type="number" value="0"></td>
+			<td id="structure_comment" class="comment"><textarea name="" rows="5" cols="40" id="structure_comments"></textarea></td>
+
+		</tr>
+		<tr id="media_category">
+			<td class="category">Media (images, embedded video or audio, external videos) (30%)</td>
+			<td>All images are resized and cropped properly. No distortion. All embedded or external medial play properly. <input type="radio" id="excellent_media" name="media_radio" value="30" checked></td>
+			<td>Max. 1 media doesn't play or display properly, or 1 distorted image. <input type="radio" id="good_media" name="media_radio" value="25"></td></td>
+			<td>Some (>1) media/images don't play or display properly. <input type="radio" id="fair_media" name="media_radio" value="20"></td></td>
+			<td>The published embedded media are missing, either totally missing or not displayed properly. <input type="radio" id="poor_media" name="media_radio" value="15"></td></td>
+			<td id="media_mark"></td>
+			<td><input id="media_partial_mark" type="number" value="0"></td>
+			<td id="media_comment" class="comment"><textarea name="" rows="5" cols="40" id="media_comments"></textarea></td>
+		</tr>
+
+		<tr id="template_category">
+			<td class="category">CSS Template (stylesheets, custom fonts, division) (10%)</td>
+			<td>CSS stylesheets used properly. All embedded fonts displayed properly. No &lt;div&gt; tag errors. <input type="radio" id="excellent_template" name="template_radio" value="10" checked></td>
+			<td>Some fonts are not displayed properly, or some &lt;div&gt;s don't match. <input type="radio" id="good_template" name="template_radio" value="8"></td>
+			<td>CSS template loads properly, but there are some serious layout issues. <input type="radio" id="fair_template" name="template_radio" value="6"></td>
+			<td>Did not load CSS template properly, thus the layout is broken. <input type="radio" id="poor_template" name="template_radio" value="4"></td>
+			<td id="template_mark"></td>
+			<td><input id="template_partial_mark" type="number" value="0"></td>
+			<td id="template_comment" class="comment"><textarea name="" rows="5" cols="40" id="template_comments"></textarea></td>
+		</tr>
+		<tr id="contents_category">
+			<td class="category">Contents and Interests (20%)</td>
+			<td>The write-up is interesting. The topic is well-chosen and relevant. <input type="radio" id="excellent_content" name="contents_radio" value="20"></td>
+			<td>The write-up is adequate. The topic is interesting. <input type="radio" id="good_content" name="contents_radio" value="15" checked></td>
+			<td>The write-up and topic are boring. <input type="radio" id="fair_content" name="contents_radio" value="10"></td>
+			<td>Cut and paste from other sources. Almost no original contents. <input type="radio" id="poor_content" name="contents_radio" value="5"></td>
+			<td id="contents_mark"></td>
+			<td><input id="contents_partial_mark" type="number" value="0"></td>
+			<td id="contents_comment" class="comment"><textarea name="" rows="5" cols="40" id="contents_comments"></textarea></td>
+		</tr>
+		<tr id="creativity_category">
+			<td class="category">Creativity and originality (10%)</td>
+			<td>Very original in design, layout, color choices, etc. <input type="radio" id="excellent_creativity" name="creativity_radio" value="10"></td>
+			<td>The layout, fonts, color choices are acceptable, but not exceptional. <input type="radio" id="good_creativity" name="creativity_radio" value="8" checked></td>
+			<td>Awkward layout and color choices. Did not use a well designed CSS template. <input type="radio" id="fair_creativity" name="creativity_radio" value="6"></td>
+			<td>Color and layout are too distracting. Too many issues in navigation and display. <input type="radio" id="poor_creativity" name="creativity_radio" value="4"></td>
+			<td id="creativity_mark"></td>
+			<td><input id="creativity_partial_mark" type="number" value="0"></td>
+			<td id="creativity_comment" class="comment"><textarea name="" rows="5" cols="40" id="creativity_comments"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan=5 class="disable_color"></td>
+			<td id=total_mark></td>
+			<td class="disable_color"></td>
+			
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<div align="center">
+	<button id="comment_file_generator" class="main_button">Generate Comments</button>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="final_project_grade.js"></script>
+</body>
+
+</html>

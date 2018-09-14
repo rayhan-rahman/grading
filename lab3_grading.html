@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro|Ubuntu" rel="stylesheet">
+	<style>
+
+		body {
+			width: 1200px;
+			margin: auto;
+		}
+
+		h1 {
+			margin: auto;
+			text-align: center;
+			color: white;
+			background-color: black;
+			width: 1000px;
+		}
+
+		table {
+			margin: auto;
+    		border-spacing: 2px;
+    		width: 1000px;
+    		font-family: 'Open Sans', sans-serif;
+		}
+
+		th {
+		    text-align: left;
+		    color: white;
+		    background-color: lightblue;
+		    font-family: 'Ubuntu', sans-serif;
+		}
+
+		th, td {
+		    padding: 10px;
+		}
+
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+
+		td.category {
+			background-color: limegreen;
+			color: white;
+			width: 300px;
+		}
+
+		th.p_back {
+			background-color: purple;
+		}
+
+		td.criterion {
+			font-size: 0.7em;
+			width: 100px;
+		}
+
+		.comment textarea{
+			font-family: 'Source Sans Pro', sans-serif;
+			min-width: 200px;
+			resize: none;
+			font-size: 1em;
+		}
+
+		input{
+			font-size: 1em;
+			width: 40px;
+		}
+
+		.disable_color {
+			background-color: black;
+		}
+
+		.total_mark {
+			width: 200px;
+			color: red;
+			background-color: black;
+			font-size: 1.5em;
+			text-align: center;
+		}
+
+		.main_button {
+			margin: auto;
+			text-align: center;
+			background-color: green;
+			color: white;
+			font-size: 1.5em;
+			border-radius: 4px;
+			padding: 15px 32px;
+		}
+
+		.main_button:hover {
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+
+	</style>
+</head>
+
+<body>
+
+
+	<table>
+		<tr>
+			<td>Total Mark:</td>
+			<td id="total_mark_top" class="total_mark"></td>
+		</tr>
+	</table>
+
+	<br>
+	<table class="required_table">
+		<tr>
+			<th colspan=3 class="category">Lab 3 (links for all 3 parts)</th>
+			<th class="p_back" colspan=2>Comments</th>
+		</tr>
+		<tr>
+			<td>Part 1 (30%):</td>
+			<td><input type="checkbox" id="p1" checked></td>
+			<td class="comment" colspan=4><textarea rows="2" cols="60" id="p1_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td>Part 2 (30%):</td>
+			<td><input type="checkbox" id="p2" checked></td>
+			<td class="comment" colspan=4><textarea rows="2" cols="60" id="p2_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td>Part 3 (40%):</td>
+			<td><input type="checkbox" id="p3" checked></td>
+			<td class="comment" colspan=4><textarea rows="2" cols="60" id="p3_comments"></textarea></td>
+		</tr>
+
+	</table>
+
+
+	<br>
+	<br>
+	<h1>Part 1 (30%)</h1>
+	<br>
+
+	<table class="required_table">
+		<tr>
+			<th colspan=3 class="p_back">Criteria</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Still contains inline style elements. (-5)</td>
+			<td><input type="checkbox" id="p1_st" ></td>
+			<td id="p1_st_mark">0</td>
+			<td><input id="p1_st_partial_mark" tyep="number" value="0" step="any" min="-5" max="0"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p1_st_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Fixed body width (2)</td>
+			<td><input type="checkbox" id="width" checked></td>
+			<td id="width_mark">2</td>
+			<td><input id="width_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="width_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Fixed body background (4)</td>
+			<td><input type="checkbox" id="bg" checked></td>
+			<td id="bg_mark">4</td>
+			<td><input id="bg_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="bg_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 1 imported/linked properly in style tag(1)</td>
+			<td><input type="checkbox" id="p1_gf1i" checked></td>
+			<td id="p1_gf1i_mark">1</td>
+			<td><input id="p1_gf1i_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p1_gf1i_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 1 used/applied on some HTML element (2)</td>
+			<td><input type="checkbox" id="p1_gf1u" checked></td>
+			<td id="p1_gf1u_mark">2</td>
+			<td><input id="p1_gf1u_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p1_gf1u_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 2 imported/linked properly in style tag(1)</td>
+			<td><input type="checkbox" id="p1_gf2i" checked></td>
+			<td id="p1_gf2i_mark">1</td>
+			<td><input id="p1_gf2i_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p1_gf2i_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 2 used/applied on some HTML element (2)</td>
+			<td><input type="checkbox" id="p1_gf2u" checked></td>
+			<td id="p1_gf2u_mark">2</td>
+			<td><input id="p1_gf2u_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p1_gf2u_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Text alignment (2)</td>
+			<td><input type="checkbox" id="alignment" checked></td>
+			<td id="alignment_mark">2</td>
+			<td><input id="alignment_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="alignment_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Color of text (2)</td>
+			<td><input type="checkbox" id="color" checked></td>
+			<td id="color_mark">2</td>
+			<td><input id="color_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="color_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 1 padding (1)</td>
+			<td><input type="checkbox" id="im1p" checked></td>
+			<td id="im1p_mark">1</td>
+			<td><input id="im1p_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im1p_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 1 margin (1)</td>
+			<td><input type="checkbox" id="im1m" checked></td>
+			<td id="im1m_mark">1</td>
+			<td><input id="im1m_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im1m_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 1 border (1)</td>
+			<td><input type="checkbox" id="im1b" checked></td>
+			<td id="im1b_mark">1</td>
+			<td><input id="im1b_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im1b_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 2 padding (1)</td>
+			<td><input type="checkbox" id="im2p" checked></td>
+			<td id="im2p_mark">1</td>
+			<td><input id="im2p_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im2p_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 2 margin (1)</td>
+			<td><input type="checkbox" id="im2m" checked></td>
+			<td id="im2m_mark">1</td>
+			<td><input id="im2m_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im2m_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 2 border (1)</td>
+			<td><input type="checkbox" id="im2b" checked></td>
+			<td id="im2b_mark">1</td>
+			<td><input id="im2b_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im2b_comments"></textarea></td>
+		</tr>
+
+
+		<tr>
+			<td class="wrap4">Image 3 padding (1)</td>
+			<td><input type="checkbox" id="im3p" checked></td>
+			<td id="im3p_mark">1</td>
+			<td><input id="im3p_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im3p_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 3 margin (1)</td>
+			<td><input type="checkbox" id="im3m" checked></td>
+			<td id="im3m_mark">1</td>
+			<td><input id="im3m_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im3m_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Image 3 border (1)</td>
+			<td><input type="checkbox" id="im3b" checked></td>
+			<td id="im3b_mark">1</td>
+			<td><input id="im3b_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="im3b_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Youtube video padding (1)</td>
+			<td><input type="checkbox" id="yp" checked></td>
+			<td id="yp_mark">1</td>
+			<td><input id="yp_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="yp_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Youtube video margin (1)</td>
+			<td><input type="checkbox" id="ym" checked></td>
+			<td id="ym_mark">1</td>
+			<td><input id="ym_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="ym_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Youtube video border (1)</td>
+			<td><input type="checkbox" id="yb" checked></td>
+			<td id="yb_mark">1</td>
+			<td><input id="yb_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="yb_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">At least one ID (2)</td>
+			<td><input type="checkbox" id="aid" checked></td>
+			<td id="aid_mark">2</td>
+			<td><input id="aid_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="aid_comments"></textarea></td>
+		</tr>
+
+	</table>
+
+
+	<br>
+	<br>
+	<h1>Part 2 (30%)</h1>
+	<br>
+
+	<table class="required_table">
+		<tr>
+			<th colspan=3 class="p_back">Criteria</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Still contains inline style elements. (-5)</td>
+			<td><input type="checkbox" id="p2_st" ></td>
+			<td id="p2_st_mark">0</td>
+			<td><input id="p2_st_partial_mark" tyep="number" value="0" step="any" min="-6" max="0"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p2_st_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 1 imported/linked properly in style tag(1)</td>
+			<td><input type="checkbox" id="p2_gf1i" checked></td>
+			<td id="p2_gf1i_mark">1</td>
+			<td><input id="p2_gf1i_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p2_gf1i_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 1 used/applied on some HTML element (2)</td>
+			<td><input type="checkbox" id="p2_gf1u" checked></td>
+			<td id="p2_gf1u_mark">2</td>
+			<td><input id="p2_gf1u_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p2_gf1u_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 2 imported/linked properly in style tag(1)</td>
+			<td><input type="checkbox" id="p2_gf2i" checked></td>
+			<td id="p2_gf2i_mark">1</td>
+			<td><input id="p2_gf2i_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p2_gf2i_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Google Font 2 used/applied on some HTML element (2)</td>
+			<td><input type="checkbox" id="p2_gf2u" checked></td>
+			<td id="p2_gf2u_mark">2</td>
+			<td><input id="p2_gf2u_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="p2_gf2u_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Header grid area (color, background, etc.) (4)</td>
+			<td><input type="checkbox" id="header_grid_area" checked></td>
+			<td id="header_grid_area_mark">4</td>
+			<td><input id="header_grid_area_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="header_grid_area_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Sidebar grid area (color, background, etc.) (4)</td>
+			<td><input type="checkbox" id="sidebar_grid_area" checked></td>
+			<td id="sidebar_grid_area_mark">4</td>
+			<td><input id="sidebar_grid_area_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="sidebar_grid_area_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Content grid area (color, background, etc.) (4)</td>
+			<td><input type="checkbox" id="content_grid_area" checked></td>
+			<td id="content_grid_area_mark">4</td>
+			<td><input id="content_grid_area_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="content_grid_area_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Footer grid area (color, background, etc.) (4)</td>
+			<td><input type="checkbox" id="footer_grid_area" checked></td>
+			<td id="footer_grid_area_mark">4</td>
+			<td><input id="footer_grid_area_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="footer_grid_area_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Grid columns to define layout (e.g., "wrapper" class in the example) (8)</td>
+			<td><input type="checkbox" id="grid_layout" checked></td>
+			<td id="grid_layout_mark">8</td>
+			<td><input id="grid_layout_partial_mark" tyep="number" value="0" step="any" min="-8" max="8"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="grid_layout_comments"></textarea></td>
+		</tr>
+
+
+
+	</table>
+
+	<br>
+	<br>
+
+	<br>
+	<br>
+	<h1>Part 3 (40%)</h1>
+	<br>
+
+	<table class="required_table">
+		<tr>
+			<th colspan=3 class="p_back">Criteria</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Used 8 to 12 large images. (10)</td>
+			<td><input type="checkbox" id="large_images" checked></td>
+			<td id="large_images_mark">10</td>
+			<td><input id="large_images_partial_mark" tyep="number" value="0" step="any" min="-10" max="10"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="large_images_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Small images are 75x75 pixels. (10)</td>
+			<td><input type="checkbox" id="small_images" checked></td>
+			<td id="small_images_mark">10</td>
+			<td><input id="small_images_partial_mark" tyep="number" value="0" step="any" min="-10" max="10"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="small_images_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Changed the border of the large images. (4)</td>
+			<td><input type="checkbox" id="border" checked></td>
+			<td id="border_mark">4</td>
+			<td><input id="border_partial_mark" tyep="number" value="0" step="any" min="-6" max="0"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="border_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Changed caption (4)</td>
+			<td><input type="checkbox" id="caption" checked></td>
+			<td id="caption_mark">4</td>
+			<td><input id="caption_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="caption_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Changed title (3)</td>
+			<td><input type="checkbox" id="part3_title" checked></td>
+			<td id="part3_title_mark">3</td>
+			<td><input id="part3_title_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="part3_title_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Changed content of h1 tag in the body (3)</td>
+			<td><input type="checkbox" id="part3_h1" checked></td>
+			<td id="part3_h1_mark">3</td>
+			<td><input id="part3_h1_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="part3_h1_comments"></textarea></td>
+		</tr>
+
+
+		<tr>
+			<td class="wrap4">Imported/linked Google font (3)</td>
+			<td><input type="checkbox" id="font_3" checked></td>
+			<td id="font_3_mark">3</td>
+			<td><input id="font_3_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="font_3_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Applied/Used Google font (3)</td>
+			<td><input type="checkbox" id="font_3_used" checked></td>
+			<td id="font_3_used_mark">3</td>
+			<td><input id="font_3_used_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="font_3_used_comments"></textarea></td>
+		</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<table>
+		<tr>
+			<td>Total Mark:</td>
+			<td id="total_mark_bottom" class="total_mark"></td>
+		</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<div align="center">
+	<button id="comment_file_generator" class="main_button">Generate Comments</button>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="lab_3_grade.js"></script>
+
+</body>
+</html>

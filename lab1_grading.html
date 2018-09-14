@@ -1,0 +1,796 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro|Ubuntu" rel="stylesheet">
+	<style>
+
+		body {
+			width: 1200px;
+			margin: auto;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		table {
+			margin: auto;
+    		border-spacing: 2px;
+    		width: 1000px;
+    		font-family: 'Open Sans', sans-serif;
+		}
+
+		th {
+		    text-align: left;
+		    color: white;
+		    background-color: lightblue;
+		    font-family: 'Ubuntu', sans-serif;
+		}
+
+		th, td {
+		    padding: 10px;
+		}
+
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+
+		td.category {
+			background-color: limegreen;
+			color: white;
+		}
+
+		th.p_back {
+			background-color: purple;
+		}
+
+		.comment textarea{
+			font-family: 'Source Sans Pro', sans-serif;
+			min-width: 400px;
+			resize: none;
+			font-size: 1em;
+		}
+
+		input{
+			font-size: 1em;
+			width: 40px;
+		}
+
+		.disable_color {
+			background-color: black;
+		}
+
+		.total_mark {
+			font-weight: 900;
+			color: red;
+		}
+
+		.main_button {
+			margin: auto;
+			text-align: center;
+			background-color: green;
+			color: white;
+			font-size: 1.5em;
+			border-radius: 4px;
+			padding: 15px 32px;
+		}
+
+		.main_button:hover {
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<table>
+	<tr>
+		<td>Total Mark:</td>
+		<td id="total_mark_top" class="total_mark"></td>
+	</tr>
+	</table>
+
+	<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Lab 1</th>
+		<th class="p_back" colspan=2>Comments</th>
+	</tr>
+	<tr>
+		<td>Part 1 url is given properly:</td>
+		<td><input type="checkbox" id="part_1_given" checked></td>
+		<td class="comment" colspan=4><textarea rows="2" cols="60" id="part_1_given_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Part 2 url is given properly:</td>
+		<td><input type="checkbox" id="part_2_given" checked></td>
+		<td class="comment" colspan=4><textarea rows="2" cols="60" id="part_2_given_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+
+	<h1>Part 1: 50%</h1>
+
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Structure and Content</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+	<tr>
+		<td>Structure: Four Sections: Course, Department, Faculty, Video</td>
+		<td><input type="checkbox" id="structure" checked></td>
+		<td id="structure_grade">5</td>
+		<td><input id="structure_partial_mark" tyep="number" value="0" step="any" min="-5" max="5"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="structure_comments"></textarea></td>
+	</tr>
+	<tr>
+		<td>One Embedded Youtube Video:</td>
+		<td><input type="checkbox" id="youtube" checked></td>
+		<td id="youtube_grade">5</td>
+		<td><input id="youtube_partial_mark" tyep="number" value="0" step="any" min="-5" max="5"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="youtube_comments"></textarea></td>
+	</tr>
+	</table>
+
+	<br>
+	<br>
+	<br>
+
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Three Images (each at least 600 pixels wide)</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+	<tr>
+		<td>Image 1 (5 marks)</td>
+		<td><input type="checkbox" id="image_1" checked></td>
+		<td id="image_1_grade">5</td>
+		<td><input id="image_1_partial_mark" tyep="number" value="0" step="any" min="-5" max="5"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="image_1_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 2 (5 marks)</td>
+		<td><input type="checkbox" id="image_2" checked></td>
+		<td id="image_2_grade">5</td>
+		<td><input id="image_2_partial_mark" tyep="number" value="0" step="any" min="-5" max="5"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="image_2_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 3 (5 marks)</td>
+		<td><input type="checkbox" id="image_3" checked></td>
+		<td id="image_3_grade">5</td>
+		<td><input id="image_3_partial_mark" tyep="number" value="0" step="any" min="-5" max="5"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="image_3_comments"></textarea></td>
+	</tr>
+	</table>
+<br>
+<br>
+<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">HTML tags you must include</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>&lt;html&gt;</td>
+		<td><input type="checkbox" id="l_html" checked></td>
+		<td id="l_html_grade">1</td>
+		<td><input id="l_html_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_html_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/html&gt;</td>
+		<td><input type="checkbox" id="r_html" checked></td>
+		<td id="r_html_grade">1</td>
+		<td><input id="r_html_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_html_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;head&gt;</td>
+		<td><input type="checkbox" id="l_head" checked></td>
+		<td id="l_head_grade">1</td>
+		<td><input id="l_head_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_head_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/head&gt;</td>
+		<td><input type="checkbox" id="r_head" checked></td>
+		<td id="r_head_grade">1</td>
+		<td><input id="r_head_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_head_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;title&gt;</td>
+		<td><input type="checkbox" id="l_title" checked></td>
+		<td id="l_title_grade">1</td>
+		<td><input id="l_title_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_title_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/title&gt;</td>
+		<td><input type="checkbox" id="r_title" checked></td>
+		<td id="r_title_grade">1</td>
+		<td><input id="r_title_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_title_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;body&gt;</td>
+		<td><input type="checkbox" id="l_body" checked></td>
+		<td id="l_body_grade">1</td>
+		<td><input id="l_body_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_body_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/body&gt;</td>
+		<td><input type="checkbox" id="r_body" checked></td>
+		<td id="r_body_grade">1</td>
+		<td><input id="r_body_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_body_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;h1&gt;</td>
+		<td><input type="checkbox" id="l_h1" checked></td>
+		<td id="l_h1_grade">1</td>
+		<td><input id="l_h1_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_h1_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/h1&gt;</td>
+		<td><input type="checkbox" id="r_h1" checked></td>
+		<td id="r_h1_grade">1</td>
+		<td><input id="r_h1_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_h1_comments"></textarea></td>
+	</tr>
+
+		<tr>
+		<td>&lt;div&gt;</td>
+		<td><input type="checkbox" id="l_div" checked></td>
+		<td id="l_div_grade">1</td>
+		<td><input id="l_div_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_div_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/div&gt;</td>
+		<td><input type="checkbox" id="r_div" checked></td>
+		<td id="r_div_grade">1</td>
+		<td><input id="r_div_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_div_comments"></textarea></td>
+	</tr>
+
+		<tr>
+		<td>&lt;iframe&gt;</td>
+		<td><input type="checkbox" id="l_iframe" checked></td>
+		<td id="l_iframe_grade">1</td>
+		<td><input id="l_iframe_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_iframe_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/iframe&gt;</td>
+		<td><input type="checkbox" id="r_iframe" checked></td>
+		<td id="r_iframe_grade">1</td>
+		<td><input id="r_iframe_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_iframe_comments"></textarea></td>
+	</tr>
+
+		<tr>
+		<td>&lt;ul&gt; or &lt;ol&gt;</td>
+		<td><input type="checkbox" id="l_ul" checked></td>
+		<td id="l_ul_grade">1</td>
+		<td><input id="l_ul_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_ul_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/ul&gt; or &lt;/ol&gt;</td>
+		<td><input type="checkbox" id="r_ul" checked></td>
+		<td id="r_ul_grade">1</td>
+		<td><input id="r_ul_partial_mark" tyep="number" value="0" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_ul_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;li&gt;</td>
+		<td><input type="checkbox" id="l_li" checked></td>
+		<td id="l_li_grade">1</td>
+		<td><input id="l_li_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_li_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/li&gt;</td>
+		<td><input type="checkbox" id="r_li" checked></td>
+		<td id="r_li_grade">1</td>
+		<td><input id="r_li_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_li_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;a&gt; around some text</td>
+		<td><input type="checkbox" id="l_a_text" checked></td>
+		<td id="l_a_text_grade">1</td>
+		<td><input id="l_a_text_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_a_text_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/a&gt; around some text</td>
+		<td><input type="checkbox" id="r_a_text" checked></td>
+		<td id="r_a_text_grade">1</td>
+		<td><input id="r_a_text_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_a_text_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;a&gt; around an image</td>
+		<td><input type="checkbox" id="l_a_image" checked></td>
+		<td id="l_a_image_grade">1</td>
+		<td><input id="l_a_image_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="l_a_image_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;/a&gt; around an image</td>
+		<td><input type="checkbox" id="r_a_image" checked></td>
+		<td id="r_a_image_grade">1</td>
+		<td><input id="r_a_image_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="r_a_image_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;br&gt;</td>
+		<td><input type="checkbox" id="id_br" checked></td>
+		<td id="br_grade">1</td>
+		<td><input id="br_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="br_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;img&gt;</td>
+		<td><input type="checkbox" id="id_img" checked></td>
+		<td id="img_grade">1</td>
+		<td><input id="img_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="img_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>&lt;p&gt;</td>
+		<td><input type="checkbox" id="id_p" checked></td>
+		<td id="p_grade">1</td>
+		<td><input id="p_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="p_comments"></textarea></td>
+	</tr>
+
+
+	</table>
+
+	<br>
+	<br>
+	<br>
+
+	<h1>Part 2: 50%</h1>
+
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Home page layout: 5%</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>There's a colored (any color) box that highlights the word "Home" or something similar :</td>
+		<td><input type="checkbox" id="home_box" checked></td>
+		<td id="home_box_grade">2</td>
+		<td><input id="home_box_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_box_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Places page works:</td>
+		<td><input type="checkbox" id="home_to_place" checked></td>
+		<td id="home_to_place_grade">1</td>
+		<td><input id="home_to_place_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_to_place_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Food page works:</td>
+		<td><input type="checkbox" id="home_to_food" checked></td>
+		<td id="home_to_food_grade">1</td>
+		<td><input id="home_to_food_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_to_food_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Hotels page works:</td>
+		<td><input type="checkbox" id="home_to_hotels" checked></td>
+		<td id="home_to_hotels_grade">1</td>
+		<td><input id="home_to_hotels_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_to_hotels_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Places page layout: 5%</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>There's a colored (any color) box that highlights the word "Place" or something similar :</td>
+		<td><input type="checkbox" id="places_box" checked></td>
+		<td id="places_box_grade">2</td>
+		<td><input id="places_box_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_box_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Home page works:</td>
+		<td><input type="checkbox" id="places_to_home" checked></td>
+		<td id="places_to_home_grade">1</td>
+		<td><input id="places_to_home_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_to_home_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Food page works:</td>
+		<td><input type="checkbox" id="places_to_food" checked></td>
+		<td id="places_to_food_grade">1</td>
+		<td><input id="places_to_food_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_to_food_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Hotels page works:</td>
+		<td><input type="checkbox" id="places_to_hotels" checked></td>
+		<td id="places_to_hotels_grade">1</td>
+		<td><input id="places_to_hotels_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_to_hotels_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Food page layout: 5%</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>There's a colored (any color) box that highlights the word "Food" or something similar :</td>
+		<td><input type="checkbox" id="food_box" checked></td>
+		<td id="food_box_grade">2</td>
+		<td><input id="food_box_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_box_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Home page works:</td>
+		<td><input type="checkbox" id="food_to_home" checked></td>
+		<td id="food_to_home_grade">1</td>
+		<td><input id="food_to_home_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_to_home_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Places page works:</td>
+		<td><input type="checkbox" id="food_to_place" checked></td>
+		<td id="food_to_place_grade">1</td>
+		<td><input id="food_to_place_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_to_place_comments"></textarea></td>
+	</tr>
+
+
+	<tr>
+		<td>Link to the Hotels page works:</td>
+		<td><input type="checkbox" id="food_to_hotels" checked></td>
+		<td id="food_to_hotels_grade">1</td>
+		<td><input id="food_to_hotels_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_to_hotels_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Hotels page layout: 5%</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>There's a colored (any color) box that highlights the word "Hotels" or something similar :</td>
+		<td><input type="checkbox" id="hotels_box" checked></td>
+		<td id="hotels_box_grade">2</td>
+		<td><input id="hotels_box_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_box_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Home page works:</td>
+		<td><input type="checkbox" id="hotels_to_home" checked></td>
+		<td id="hotels_to_home_grade">1</td>
+		<td><input id="hotels_to_home_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_to_home_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Link to the Places page works:</td>
+		<td><input type="checkbox" id="hotels_to_place" checked></td>
+		<td id="hotels_to_place_grade">1</td>
+		<td><input id="hotels_to_place_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_to_place_comments"></textarea></td>
+	</tr>
+
+
+	<tr>
+		<td>Link to the Food page works:</td>
+		<td><input type="checkbox" id="hotels_to_food" checked></td>
+		<td id="hotels_to_food_grade">1</td>
+		<td><input id="hotels_to_food_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_to_food_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+
+	<br>
+	<br>
+
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Banner Images, properly resized and cropped to 1000x400 px or to an aspect ratio of 2.5. Two marks for each banner image.</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>Home page</td>
+		<td><input type="checkbox" id="home_banner" checked></td>
+		<td id="home_banner_grade">2</td>
+		<td><input id="home_banner_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_banner_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Places page</td>
+		<td><input type="checkbox" id="places_banner" checked></td>
+		<td id="places_banner_grade">2</td>
+		<td><input id="places_banner_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_banner_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Food page</td>
+		<td><input type="checkbox" id="food_banner" checked></td>
+		<td id="food_banner_grade">2</td>
+		<td><input id="food_banner_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_banner_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Hotels page</td>
+		<td><input type="checkbox" id="hotels_banner" checked></td>
+		<td id="hotels_banner_grade">2</td>
+		<td><input id="hotels_banner_partial_mark" tyep="number" value="0" step="any" min="-2" max="2"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_banner_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Home page smaller images: 3%. Each image needs to be properly resized and cropped to 300x150 px or to an aspect ratio of 2.0.</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>Image 1</td>
+		<td><input type="checkbox" id="home_img_1" checked></td>
+		<td id="home_img_1_grade">1</td>
+		<td><input id="home_img_1_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_img_1_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 2</td>
+		<td><input type="checkbox" id="home_img_2" checked></td>
+		<td id="home_img_2_grade">1</td>
+		<td><input id="home_img_2_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_img_2_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 3</td>
+		<td><input type="checkbox" id="home_img_3" checked></td>
+		<td id="home_img_3_grade">1</td>
+		<td><input id="home_img_3_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_img_3_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Places page smaller images: 3%. Each image needs to be properly resized and cropped to 300x150 px or to an aspect ratio of 2.0.</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>Image 1</td>
+		<td><input type="checkbox" id="places_img_1" checked></td>
+		<td id="places_img_1_grade">1</td>
+		<td><input id="places_img_1_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_img_1_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 2</td>
+		<td><input type="checkbox" id="places_img_2" checked></td>
+		<td id="places_img_2_grade">1</td>
+		<td><input id="places_img_2_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_img_2_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 3</td>
+		<td><input type="checkbox" id="places_img_3" checked></td>
+		<td id="places_img_3_grade">1</td>
+		<td><input id="places_img_3_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_img_3_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+		<br>
+	<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Food page smaller images: 3%. Each image needs to be properly resized and cropped to 300x150 px or to an aspect ratio of 2.0.</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>Image 1</td>
+		<td><input type="checkbox" id="food_img_1" checked></td>
+		<td id="food_img_1_grade">1</td>
+		<td><input id="food_img_1_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_img_1_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 2</td>
+		<td><input type="checkbox" id="food_img_2" checked></td>
+		<td id="food_img_2_grade">1</td>
+		<td><input id="food_img_2_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_img_2_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 3</td>
+		<td><input type="checkbox" id="food_img_3" checked></td>
+		<td id="food_img_3_grade">1</td>
+		<td><input id="food_img_3_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_img_3_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+		<br>
+	<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Hotels page smaller images: 3%. Each image needs to be properly resized and cropped to 300x150 px or to an aspect ratio of 2.0.</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>Image 1</td>
+		<td><input type="checkbox" id="hotels_img_1" checked></td>
+		<td id="hotels_img_1_grade">1</td>
+		<td><input id="hotels_img_1_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_img_1_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 2</td>
+		<td><input type="checkbox" id="hotels_img_2" checked></td>
+		<td id="hotels_img_2_grade">1</td>
+		<td><input id="hotels_img_2_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_img_2_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Image 3</td>
+		<td><input type="checkbox" id="hotels_img_3" checked></td>
+		<td id="hotels_img_3_grade">1</td>
+		<td><input id="hotels_img_3_partial_mark" tyep="number" value="0" step="any" min="-1" max="1"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_img_3_comments"></textarea></td>
+	</tr>
+
+	</table>
+	<br>
+	<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Content: 10%. It's okay to have text copy pasted. But you do need to change the text given in the template.</th>
+		<th class="p_back">Partial Grade/Adjustment</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td>Sufficient description in each section:</td>
+		<td><input type="checkbox" id="part_2_contents" checked></td>
+		<td id="part_2_contents_grade">10</td>
+		<td><input id="part_2_contents_partial_mark" tyep="number" value="0" step="any" min="-10" max="10"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="part_2_contents_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<table>
+	<tr>
+		<td>Total Mark:</td>
+		<td id="total_mark_bottom" class="total_mark"></td>
+	</tr>
+	</table>
+
+	<br>
+	<br>
+
+	<div align="center">
+	<button id="comment_file_generator" class="main_button">Generate Comments</button>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="lab_1_grade.js"></script>
+
+</body>
+</html>

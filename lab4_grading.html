@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro|Ubuntu" rel="stylesheet">
+	<style>
+
+		body {
+			width: 1200px;
+			margin: auto;
+		}
+
+		h1 {
+			margin: auto;
+			text-align: center;
+			color: white;
+			background-color: black;
+			width: 1000px;
+		}
+
+		table {
+			margin: auto;
+    		border-spacing: 2px;
+    		width: 1000px;
+    		font-family: 'Open Sans', sans-serif;
+		}
+
+		th {
+		    text-align: left;
+		    color: white;
+		    background-color: lightblue;
+		    font-family: 'Ubuntu', sans-serif;
+		}
+
+		th, td {
+		    padding: 10px;
+		}
+
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+
+		td.category {
+			background-color: limegreen;
+			color: white;
+			width: 300px;
+		}
+
+		th.p_back {
+			background-color: purple;
+		}
+
+		td.criterion {
+			font-size: 0.7em;
+			width: 100px;
+		}
+
+		.comment textarea{
+			font-family: 'Source Sans Pro', sans-serif;
+			min-width: 200px;
+			resize: none;
+			font-size: 1em;
+		}
+
+		input{
+			font-size: 1em;
+			width: 40px;
+		}
+
+		.disable_color {
+			background-color: black;
+		}
+
+		.total_mark {
+			width: 200px;
+			color: red;
+			background-color: black;
+			font-size: 1.5em;
+			text-align: center;
+		}
+
+		.main_button {
+			margin: auto;
+			text-align: center;
+			background-color: green;
+			color: white;
+			font-size: 1.5em;
+			border-radius: 4px;
+			padding: 15px 32px;
+		}
+
+		.main_button:hover {
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+
+	</style>
+</head>
+
+<body>
+
+
+	<table>
+		<tr>
+			<td>Total Marks:</td>
+			<td id="total_mark_top" class="total_mark"></td>
+		</tr>
+	</table>
+
+	<br>
+	<table class="required_table">
+		<tr>
+			<th colspan=3 class="category">Lab 4 (links for all 2 parts)</th>
+			<th class="p_back" colspan=2>Comments</th>
+		</tr>
+		<tr>
+			<td>Part 1 (40%):</td>
+			<td><input type="checkbox" id="p1" checked></td>
+			<td class="comment" colspan=4><textarea rows="2" cols="60" id="p1_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td>Part 2 (60%):</td>
+			<td><input type="checkbox" id="p2" checked></td>
+			<td class="comment" colspan=4><textarea rows="2" cols="60" id="p2_comments"></textarea></td>
+		</tr>
+
+
+	</table>
+
+
+	<br>
+	<br>
+	<h1>Part 1 (40%)</h1>
+	<br>
+
+	<table class="required_table">
+		<tr>
+			<th colspan=3 class="p_back">Criteria</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+		<tr>
+			<td class="wrap4">At least 6 images. (10)</td>
+			<td><input type="checkbox" id="six" checked></td>
+			<td id="six_mark">10</td>
+			<td><input id="six_partial_mark" tyep="number" value="0" step="any" min="-10" max="10"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="six_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Slideshow loops properly. (10)</td>
+			<td><input type="checkbox" id="loop" checked></td>
+			<td id="loop_mark">10</td>
+			<td><input id="loop_partial_mark" tyep="number" value="0" step="any" min="-10" max="10"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="loop_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">"h1" heading is changed to the name of the person in the image. (10)</td>
+			<td><input type="checkbox" id="name" checked></td>
+			<td id="name_mark">10</td>
+			<td><input id="name_partial_mark" tyep="number" value="0" step="any" min="-10" max="10"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="name_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Body background changed. (3)</td>
+			<td><input type="checkbox" id="background" checked></td>
+			<td id="background_mark">3</td>
+			<td><input id="background_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="background_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Border around the images. (3)</td>
+			<td><input type="checkbox" id="border" checked></td>
+			<td id="border_mark">3</td>
+			<td><input id="border_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="border_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Font changed/used. (4)</td>
+			<td><input type="checkbox" id="font" checked></td>
+			<td id="font_mark">4</td>
+			<td><input id="font_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="font_comments"></textarea></td>
+		</tr>
+
+	</table>
+
+	<br>
+	<br>
+	<h1>Part 2 (60%)</h1>
+	<br>
+
+	<table class="required_table">
+		<tr>
+			<th colspan=3 class="p_back">Criteria</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+
+		<tr>
+			<td class="wrap4">At least 6 playable videos. (12)</td>
+			<td><input type="checkbox" id="videos" checked></td>
+			<td id="videos_mark">12</td>
+			<td><input id="videos_partial_mark" tyep="number" value="0" step="any" min="-12" max="12"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="videos_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">title changed in videos.js (document.title =""). (3)</td>
+			<td><input type="checkbox" id="title" checked></td>
+			<td id="title_mark">3</td>
+			<td><input id="title_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="title_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Changed the contents of "h1" in videos.js. (3)</td>
+			<td><input type="checkbox" id="h1" checked></td>
+			<td id="h1_mark">3</td>
+			<td><input id="h1_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="h1_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">Changed the name of the songs for the drop-down option in videos.js. (6)</td>
+			<td><input type="checkbox" id="dropdown" checked></td>
+			<td id="dropdown_mark">6</td>
+			<td><input id="dropdown_partial_mark" tyep="number" value="0" step="any" min="-6" max="6"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="dropdown_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">next function works correctly. (15)</td>
+			<td><input type="checkbox" id="next" checked></td>
+			<td id="next_mark">15</td>
+			<td><input id="next_partial_mark" tyep="number" value="0" step="any" min="-15" max="15"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="next_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">added a new button "Prev" in videos.html: (3)</td>
+			<td><input type="checkbox" id="prev" checked></td>
+			<td id="prev_mark">3</td>
+			<td><input id="prev_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="prev_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">onclick funtion for the prev button is set to the previous function inside the initialize function. (3)</td>
+			<td><input type="checkbox" id="wire" checked></td>
+			<td id="wire_mark">3</td>
+			<td><input id="wire_partial_mark" tyep="number" value="0" step="any" min="-3" max="3"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="wire_comments"></textarea></td>
+		</tr>
+
+		<tr>
+			<td class="wrap4">previous function works correctly. (15)</td>
+			<td><input type="checkbox" id="previous" checked></td>
+			<td id="previous_mark">15</td>
+			<td><input id="previous_partial_mark" tyep="number" value="0" step="any" min="-15" max="15"></td>
+			<td class="comment"><textarea rows="2" cols="40" id="previous_comments"></textarea></td>
+		</tr>
+
+	</table>
+
+
+
+	<br>
+	<br>
+
+	<table>
+		<tr>
+			<td>Total Marks:</td>
+			<td id="total_mark_bottom" class="total_mark"></td>
+		</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<div align="center">
+	<button id="comment_file_generator" class="main_button">Generate Comments</button>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="lab4_grade.js"></script>
+
+</body>
+</html>

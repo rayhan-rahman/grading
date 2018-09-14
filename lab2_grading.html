@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro|Ubuntu" rel="stylesheet">
+	<style>
+
+		body {
+			width: 1200px;
+			margin: auto;
+		}
+
+		h1 {
+			margin: auto;
+			text-align: center;
+			color: white;
+			background-color: black;
+			width: 1000px;
+		}
+
+		table {
+			margin: auto;
+    		border-spacing: 2px;
+    		width: 1000px;
+    		font-family: 'Open Sans', sans-serif;
+		}
+
+		th {
+		    text-align: left;
+		    color: white;
+		    background-color: lightblue;
+		    font-family: 'Ubuntu', sans-serif;
+		}
+
+		th, td {
+		    padding: 10px;
+		}
+
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+
+		td.category {
+			background-color: limegreen;
+			color: white;
+			width: 300px;
+		}
+
+		th.p_back {
+			background-color: purple;
+		}
+
+		td.criterion {
+			font-size: 0.7em;
+			width: 100px;
+		}
+
+		.comment textarea{
+			font-family: 'Source Sans Pro', sans-serif;
+			min-width: 200px;
+			resize: none;
+			font-size: 1em;
+		}
+
+		input{
+			font-size: 1em;
+			width: 40px;
+		}
+
+		.disable_color {
+			background-color: black;
+		}
+
+		.total_mark {
+			width: 200px;
+			color: red;
+			background-color: black;
+			font-size: 1.5em;
+			text-align: center;
+		}
+
+		.main_button {
+			margin: auto;
+			text-align: center;
+			background-color: green;
+			color: white;
+			font-size: 1.5em;
+			border-radius: 4px;
+			padding: 15px 32px;
+		}
+
+		.main_button:hover {
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+
+	</style>
+</head>
+
+<body>
+
+
+	<table>
+	<tr>
+		<td>Total Mark:</td>
+		<td id="total_mark_top" class="total_mark"></td>
+	</tr>
+	</table>
+
+	<br>
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="category">Lab 2 (links for all 4 parts)</th>
+		<th class="p_back" colspan=2>Comments</th>
+	</tr>
+	<tr>
+		<td>Part 1 (20%):</td>
+		<td><input type="checkbox" id="part_1_given" checked></td>
+		<td class="comment" colspan=4><textarea rows="2" cols="60" id="part_1_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Part 2 (20%):</td>
+		<td><input type="checkbox" id="part_2_given" checked></td>
+		<td class="comment" colspan=4><textarea rows="2" cols="60" id="part_2_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Part 3 (20%):</td>
+		<td><input type="checkbox" id="part_3_given" checked></td>
+		<td class="comment" colspan=4><textarea rows="2" cols="60" id="part_3_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td>Part 4 (40%):</td>
+		<td><input type="checkbox" id="part_4_given" checked></td>
+		<td class="comment" colspan=4><textarea rows="2" cols="60" id="part_4_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+	<h1>Part 1 (20%)</h1>
+	<br>
+	<table>
+		<tr>
+			<th class="p_back">Category</th>
+			<th>Excellent (10)</th>
+			<th>Good (5)</th>
+			<th>Fair (2.5)</th>
+			<th>Poor (0)</th>
+			<th class="p_back">Subtotal</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+		<tr id="audio_category">
+			<td class="category">Audio (10%).</td><td class="criterion wrap">All audio are trimmed and played properly. No distortion. <input type="radio" id="excellent_audio" name="audio_radio" value="10" checked></td>
+			<td class="criterion wrap">Audio plays but not trimmed. <input type="radio" id="good_audio" name="audio_radio" value="5"></td>
+			<td class="criterion wrap">Audio doesn't play or there are HTML tag errors. <input type="radio" id="fair_audio" name="audio_radio" value="2.5"></td>
+			<td class="criterion wrap">Audio is totally missing. <input type="radio" id="poor_audio" name="audio_radio" value="0"></td>
+			<td id="audio_mark"></td>
+			<td><input id="audio_partial_mark" type="number" value="0"></td>
+			<td id="audio_comment" class="comment"><textarea name="" rows="5" cols="40" id="audio_comments"></textarea></td>
+		</tr>
+
+		<tr id="video_category">
+			<td class="category">Video (10%).</td><td class="criterion wrap">All video are trimmed and played properly. No distortion. <input type="radio" id="excellent_video" name="video_radio" value="10" checked></td>
+			<td class="criterion wrap">Video plays but not trimmed.<input type="radio" id="good_video" name="video_radio" value="5"></td>
+			<td class="criterion wrap">Video doesn't play or display properly (i.e., distorted, pixelated, incorrect size). <input type="radio" id="fair_video" name="video_radio" value="2.5"></td>
+			<td class="criterion wrap">Video is totally missing. <input type="radio" id="poor_video" name="video_radio" value="0"></td>
+			<td id="video_mark"></td>
+			<td><input id="video_partial_mark" type="number" value="0"></td>
+			<td id="video_comment" class="comment"><textarea name="" rows="5" cols="40" id="video_comments"></textarea></td>
+		</tr>
+	</table>
+
+
+	<br>
+	<br>
+	<h1>Part 2 (20%)</h1>
+	<br>
+	<table>
+		<tr>
+			<th class="p_back">Category</th>
+			<th>Excellent</th>
+			<th>Good</th>
+			<th>Fair</th>
+			<th>Poor</th>
+			<th class="p_back">Subtotal</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+		<tr id="slideshow_category">
+			<td class="category">Slideshow (15%).</td><td class="criterion wrap2">Slideshow works perfectly.  (15) <input type="radio" id="excellent_slideshow" name="slideshow_radio" value="15" checked></td>
+			<td class="criterion wrap2">Some images are not displaying properly in the slideshow. (10)<input type="radio" id="good_slideshow" name="slideshow_radio" value="10"></td>
+			<td class="criterion wrap2">Some images are missing or pixelated, distorted. (5) <input type="radio" id="fair_slideshow" name="slideshow_radio" value="5"></td>
+			<td class="criterion wrap2">Slideshow doesn't work at all or missing completely. (0) <input type="radio" id="poor_slideshow" name="slideshow_radio" value="0"></td>
+			<td id="slideshow_mark"></td>
+			<td><input id="slideshow_partial_mark" type="number" value="0"></td>
+			<td id="slideshow_comment" class="comment"><textarea name="" rows="5" cols="40" id="slideshow_comments"></textarea></td>
+		</tr>
+
+		<tr id="facebook_category">
+			<td class="category">Facebook Like Button (5%).</td><td class="criterion wrap2">Like button displays properly and the URL works correctly. (5) <input type="radio" id="excellent_button" name="button_radio" value="5" checked></td>
+			<td class="criterion wrap2">Like button displays properly, but the URL is broken. (2.5) <input type="radio" id="good_button" name="button_radio" value="2.5"></td>
+			<td class="criterion wrap2">Like button displays partially and the url is broken. (1) <input type="radio" id="fair_button" name="button_radio" value="1"></td>
+			<td class="criterion wrap2">Like button is totally missing. (0) <input type="radio" id="poor_button" name="button_radio" value="0"></td>
+			<td id="button_mark"></td>
+			<td><input id="button_partial_mark" type="number" value="0"></td>
+			<td id="button_comment" class="comment"><textarea name="" rows="5" cols="40" id="button_comments"></textarea></td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<h1>Part 3 (20%)</h1>
+	<br>
+	<table>
+		<tr>
+			<th class="p_back">Category</th>
+			<th>Excellent</th>
+			<th>Good</th>
+			<th>Fair</th>
+			<th>Poor</th>
+			<th class="p_back">Subtotal</th>
+			<th class="p_back">Partial Grade</th>
+			<th class="p_back">Comments</th>
+		</tr>
+
+		<tr id="external_map_category">
+			<td class="category">Embedded Google map with iframe (5%).</td><td class="criterion wrap3">Works perfectly. (5) <input type="radio" id="excellent_external_map" name="external_map_radio" value="5" checked></td>
+			<td class="criterion wrap3">N/A.<input type="radio" id="good_external_map" name="external_map_radio" value="2.5" disabled></td>
+			<td class="criterion wrap3">N/A <input type="radio" id="fair_external_map" name="external_map_radio" value="1" disabled></td>
+			<td class="criterion wrap3">Completely missing. (0) <input type="radio" id="poor_external_map" name="external_map_radio" value="0"></td>
+			<td id="external_map_mark"></td>
+			<td><input id="external_map_partial_mark" type="number" value="0"></td>
+			<td id="external_map_comment" class="comment"><textarea name="" rows="5" cols="40" id="external_map_comments"></textarea></td>
+		</tr>
+
+		<tr id="embedded_map_category">
+			<td class="category">Embedded map (10%) with map.js.</td><td class="criterion wrap3">Embedded map is perfect. (10) <input type="radio" id="excellent_embedded_map" name="embedded_map_radio" value="10" checked></td>
+			<td class="criterion wrap3">The embedded map works but only one of the following: the pop-up texts are missing or markers not visible on the displayed portion or dropped pins not hyperlinked correctly. (7) <input type="radio" id="good_embedded_map" name="embedded_map_radio" value="7"></td>
+			<td class="criterion wrap3">The embedded map works but two of the following: the pop-up texts are missing or markers not visible on the displayed portion or dropped pins not hyperlinked correctly. (3) <input type="radio" id="fair_embedded_map" name="embedded_map_radio" value="3"></td>
+			<td class="criterion wrap3">Embedded map is missing completely or map.js isn't modified at all. (0) <input type="radio" id="poor_embedded_map" name="embedded_map_radio" value="0"></td>
+			<td id="embedded_map_mark"></td>
+			<td><input id="embedded_map_partial_mark" type="number" value="0"></td>
+			<td id="embedded_map_comment" class="comment"><textarea name="" rows="5" cols="40" id="embedded_map_comments"></textarea></td>
+		</tr>
+
+		<tr id="hyperlinked_map_category">
+			<td class="category">Hyperlinked Google Map 5%.</td><td class="criterion wrap3">Both the hyperlinked maps work perfectly. (5) <input type="radio" id="excellent_hyperlinked_map" name="hyperlinked_map_radio" value="5" checked></td>
+			<td class="criterion wrap3">One of the hyperlinked maps works. (2.5) <input type="radio" id="good_hyperlinked_map" name="hyperlinked_map_radio" value="2.5"></td>
+			<td class="criterion wrap3">N/a <input type="radio" id="fair_hyperlinked_map" name="hyperlinked_map_radio" value="1" disabled></td>
+			<td class="criterion wrap3">Completely missing or both the hyperlinks are incorrect. (0) <input type="radio" id="poor_hyperlinked_map" name="hyperlinked_map_radio" value="0"></td>
+			<td id="hyperlinked_map_mark"></td>
+			<td><input id="hyperlinked_map_partial_mark" type="number" value="0"></td>
+			<td id="hyperlinked_map_comment" class="comment"><textarea name="" rows="5" cols="40" id="hyperlinked_map_comments"></textarea></td>
+		</tr>
+
+	</table>
+
+	<br>
+	<br>
+	<h1>Part 4 (40%)</h1>
+	<br>
+	
+	<table class="required_table">
+	<tr>
+		<th colspan=3 class="p_back">Criteria</th>
+		<th class="p_back">Partial Grade</th>
+		<th class="p_back">Comments</th>
+	</tr>
+
+	<tr>
+		<td class="wrap4">Images in Home page fades / slides. (6)</td>
+		<td><input type="checkbox" id="home" checked></td>
+		<td id="home_mark">6</td>
+		<td><input id="home_partial_mark" tyep="number" value="0" step="any" min="-6" max="6"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="home_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="wrap4">Images in Places page fades / slides. (6)</td>
+		<td><input type="checkbox" id="places" checked></td>
+		<td id="places_mark">6</td>
+		<td><input id="places_partial_mark" tyep="number" value="0" step="any" min="-6" max="6"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="places_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="wrap4">Images in Food page fades / slides. (6)</td>
+		<td><input type="checkbox" id="food" checked></td>
+		<td id="food_mark">6</td>
+		<td><input id="food_partial_mark" tyep="number" value="0" step="any" min="-6" max="6"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="food_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="wrap4">Images in Hotels page fades / slides. (6)</td>
+		<td><input type="checkbox" id="hotels" checked></td>
+		<td id="hotels_mark">6</td>
+		<td><input id="hotels_partial_mark" tyep="number" value="0" step="any" min="-6" max="6"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="hotels_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="wrap4">Audio in main (or in one of the) pages. (6)</td>
+		<td><input type="checkbox" id="audio_4" checked></td>
+		<td id="audio_4_mark">6</td>
+		<td><input id="audio_4_partial_mark" tyep="number" value="0" step="any" min="-6" max="6"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="audio_4_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="wrap4">Facebook Like button in main (or in one of the) pages. (6)</td>
+		<td><input type="checkbox" id="like_4" checked></td>
+		<td id="like_4_mark">6</td>
+		<td><input id="like_4_partial_mark" tyep="number" value="0" step="any" min="-5" max="5"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="like_4_comments"></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="wrap4">One Hyperlinked Google map in all 4 pages. (4)</td>
+		<td><input type="checkbox" id="map_4" checked></td>
+		<td id="map_4_mark">4</td>
+		<td><input id="map_4_partial_mark" tyep="number" value="0" step="any" min="-4" max="4"></td>
+		<td class="comment"><textarea rows="2" cols="40" id="map_4_comments"></textarea></td>
+	</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<table>
+	<tr>
+		<td>Total Mark:</td>
+		<td id="total_mark_bottom" class="total_mark"></td>
+	</tr>
+	</table>
+
+	<br>
+	<br>
+
+	<div align="center">
+	<button id="comment_file_generator" class="main_button">Generate Comments</button>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="lab_2_grade.js"></script>
+
+</body>
+</html>
